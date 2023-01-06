@@ -1,0 +1,27 @@
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <%- include ('./partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bg-light">
+        <form action="/event" method="POST">
+          Date: <input type="date" name="date" /><br />
+          Street Address: <input type="text" name="street" /><br />
+          Details: <input type="text" name="details" /><br />
+          Square feet: <input type="text" name="sqft" /><br />
+          Year Built: <input type="text" name="yearBuilt" /><br />
+          Price: <input type="string" name="price" /><br />
+          Image Url: <input type="url" name="img" /><br />
+
+          <input class="btn btn-danger" type="submit" value="Create listing" />
+        </form>
+        <a href="/event"
+          ><button type="button" name="button">Return to home</button></a
+        >
+      </div>
+    </div>
+  </body>
+</html>

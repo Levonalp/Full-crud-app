@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <%- include ('./partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>show page</h1>
+      <a href="/event"
+        ><button type="button" name="button">Back to page</button></a
+      >
+      <div class="bg-light">
+        <img src="<%= event.img %> " /> <br />
+        address : <%= event.street %><br />
+        sqft : <%= event.sqft %><br />
+        year Built : <%= event.yearBuilt %><br />
+        date : <%= event.date %><br />
+        Price :$<%= event.price %><br />
+      </div>
+
+      <a class="btn btn-danger" href="/event/<%= event.id %>/edit">Edit </a>
+      <form action="/event/<%=event._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE" />
+      </form>
+      <br />
+    </div>
+  </body>
+</html>

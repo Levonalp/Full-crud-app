@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <%- include ('./partials/head.ejs') %>
+  </head>
+
+  <body>
+    <div class="container-fluid"></div>
+
+    <!-- Carousel -->
+
+    <div
+      id="carouselExampleFade"
+      class="carousel slide carousel-fade $carousel-control-transition:opacity .1s ease mw-100"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://www.build-review.com/wp-content/uploads/2020/07/luxury-real-estate.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.lauraalamery.com/wp-content/uploads/2016/06/luxury-homes2.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://www.bankrate.com/2022/09/01101108/luxury-real-estate-157375176.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <h1 class="header">WELCOME TO LWA REALTY</h1>
+    <a href="#"
+      ><img
+        class="img-thumbnail"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNhe5p9nyX-MtvwNhZ_9jmh33QS1nHbhc2AQ&usqp=CAU"
+      />
+    </a>
+    <!-- -------Nav--------- -->
+    <nav class="nav justify-content-center fixed-top">
+      <a class="nav-link active btn btn-primary" href="./event">Home</a>
+      <a class="nav-link active btn btn-primary" href="./event/new">
+        Make New Listing</a
+      >
+    </nav>
+    <!-- Listings card show -->
+
+    <div class="row w-100">
+      <% for(let i = 0; i < event.length; i++){ %>
+      <div class="col-3">
+        <div class="card m-3 w-auto p-4 h-auto" style="width: 18rem">
+          <a href="/event/<%=event[i].id%>">
+            <img
+              src="<%= event[i].img %> "
+              class="card-img-top"
+              alt="view of the listing"
+            />
+          </a>
+          <div class="card-body">
+            <p class="card-text">
+              Price: <%=event[i].price%> <br />
+              Address: <%=event[i].street%>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+.card-img-top{
+    height: 15rem
+}
+img{
+    max-height: 40rem;
+}
+dh1{
+    color: rgb(0, 0, 0);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.img-thumbnail{
+    height: 5rem;
+    width: 10rem;
+    position: fixed;
+    padding-left: 0;
+    top: 0 ;
+    z-index: 99 !important;
+}
+.header{
+    size: 5rem;
+    position: fixed;
+    right: 0;
+    top: 0 ;
+    z-index: 99 !important;
+    color: rgb(255, 255, 255);
+    transition: delay 0.5s; ;
+}
