@@ -12,7 +12,7 @@ app.use(methodOverride('_method'))
 
 // GET Requests
 
-app.get('/event', (req, res) => {
+app.get('/', (req, res) => {
   Event.find({}, (error, allEvents) => {
     res.render('index.ejs', {
       event: allEvents
@@ -55,7 +55,7 @@ app.get('/event/:id/edit', (req, res) => {
 
 app.post('/event', (req, res) => {
         Event.create(req.body, (error, createdEvent) => {
-            res.redirect('/event')
+            res.redirect('/')
     })
 })
 
@@ -63,7 +63,7 @@ app.post('/event', (req, res) => {
 // destroy
 app.delete('/event/:id', (req, res)=>{
     Event.findByIdAndRemove(req.params.id, (err, event)=>{
-        res.redirect('/event')
+        res.redirect('/')
     });
 });
 
@@ -71,7 +71,7 @@ app.delete('/event/:id', (req, res)=>{
 
 app.put('/event/:id', (req, res) => {
   Event.findByIdAndUpdate(req.params.id, req.body, {new:true},(err, updatedModel) => {
-    res.redirect('/event')
+    res.redirect('/')
   })
 })
 
